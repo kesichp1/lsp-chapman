@@ -24,18 +24,18 @@ public class AverageStrategyTest {
 	
 	@Test
 	@DisplayName("Test case for average grade strategy")
-	public void testAverage() {
-		AverageContext ctx;
+	public void testAverage() throws EmptyListException {
+		AverageContext ctx = new AverageContext();
 		ctx.setAverageStrategy(new AverageGradeStrategy());
-		assertEquals(75, ctx.compute(grades));
+		assertEquals(75, ctx.createAverage(grades));
 	}
 	
 	@Test
 	@DisplayName("Test case for average grade strategy, dropping the 2 lowest")
-	public void testDrop() {
-		AverageContext ctx;
+	public void testDrop() throws EmptyListException {
+		AverageContext ctx = new AverageContext();
 		ctx.setAverageStrategy(new AverageGradeDroppedStrategy());
-		assertEquals(85, ctx.compute(grades));
+		assertEquals(85, ctx.createAverage(grades));
 	}
 	
 }

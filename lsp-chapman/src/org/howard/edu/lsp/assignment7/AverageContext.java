@@ -9,7 +9,7 @@ public class AverageContext {
 		this.strategy = strategy;
 	}
 	
-	public void createAverage(List<Integer> grades) throws EmptyListException {
-		strategy.compute(grades);
+	public int createAverage(List<Integer> grades) throws EmptyListException {
+		return strategy.compute(grades);
 	}
 }
